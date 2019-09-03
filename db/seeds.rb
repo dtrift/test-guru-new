@@ -5,3 +5,81 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Category.create([
+  {title: 'Frontend'}, {title: 'Backend'}
+  ])
+Test.create([
+  {title: 'Ruby', category_id: 2},
+  {title: 'Rails', category_id: 2},
+  {title: 'HTML', category_id: 1},
+  {title: 'CSS', category_id: 1},
+  {title: 'Ruby', level: 1, category_id: 2},
+  {title: 'Rails', level: 1, category_id: 2},
+  {title: 'HTML', level: 1, category_id: 1},
+  {title: 'CSS', level: 1, category_id: 1},
+  {title: 'Ruby', level: 2, category_id: 2},
+  {title: 'Rails', level: 2, category_id: 2},
+  {title: 'HTML', level: 2, category_id: 1},
+  {title: 'CSS', level: 2, category_id: 1}
+  ])
+User.create([
+  {name: 'Bob', test_id: 1},
+  {name: 'Tom', test_id: 6},
+  {name: 'Tim', test_id: 7}
+  ])
+Question.create([
+  {body: '1 any question', test_id: 1},
+  {body: '2 any question', test_id: 1},
+  {body: '3 any question', test_id: 1},
+  {body: '4 any question', test_id: 1},
+  {body: '5 any question', test_id: 6},
+  {body: '6 any question', test_id: 6},
+  {body: '7 any question', test_id: 6},
+  {body: '8 any question', test_id: 6},
+  {body: '9 any question', test_id: 7},
+  {body: '10 any question', test_id: 7},
+  {body: '11 any question', test_id: 7},
+  {body: '12 any question', test_id: 7},
+  {body: '13 any question', test_id: 10},
+  {body: '14 any question', test_id: 10},
+  {body: '15 any question', test_id: 10},
+  {body: '16 any question', test_id: 10},
+  ])
+Answer.create([
+  {body: '1 any answer', question_id: 1},
+  {body: '2 any answer', question_id: 1},
+  {body: '3 any answer', question_id: 1},
+  {body: '4 any answer', question_id: 1, correct: true},
+  {body: '1 any answer', question_id: 2},
+  {body: '2 any answer', question_id: 2, correct: true},
+  {body: '3 any answer', question_id: 2},
+  {body: '4 any answer', question_id: 2},
+  {body: '1 any answer', question_id: 3},
+  {body: '2 any answer', question_id: 3},
+  {body: '3 any answer', question_id: 3, correct: true},
+  {body: '4 any answer', question_id: 3},
+  {body: '1 any answer', question_id: 5, correct: true},
+  {body: '2 any answer', question_id: 5},
+  {body: '3 any answer', question_id: 5},
+  {body: '4 any answer', question_id: 5},
+  {body: '1 any answer', question_id: 6},
+  {body: '2 any answer', question_id: 6},
+  {body: '3 any answer', question_id: 6, correct: true},
+  {body: '4 any answer', question_id: 6},
+  {body: '1 any answer', question_id: 7},
+  {body: '2 any answer', question_id: 7},
+  {body: '3 any answer', question_id: 7},
+  {body: '4 any answer', question_id: 7, correct: true},
+  {body: '1 any answer', question_id: 9},
+  {body: '2 any answer', question_id: 9, correct: true},
+  {body: '3 any answer', question_id: 9},
+  {body: '4 any answer', question_id: 9},
+  {body: '1 any answer', question_id: 10},
+  {body: '2 any answer', question_id: 10, correct: true},
+  {body: '3 any answer', question_id: 10},
+  {body: '4 any answer', question_id: 10},
+  {body: '1 any answer', question_id: 11},
+  {body: '2 any answer', question_id: 11},
+  {body: '3 any answer', question_id: 11, correct: true},
+  {body: '4 any answer', question_id: 11},
+  ])
