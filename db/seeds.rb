@@ -83,7 +83,7 @@ answers = Answer.create!([
   {body: '3 any answer', question_id: 11, correct: true},
   {body: '4 any answer', question_id: 11},
   ])
-user_tests = User_test.create!([
+user_tests = UserTest.create!([
   {user_id: 1, test_id: 1},
   {user_id: 1, test_id: 2},
   {user_id: 1, test_id: 3},
