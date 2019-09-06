@@ -5,10 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Category.create([
+categories = Category.create!([
   {title: 'Frontend'}, {title: 'Backend'}
   ])
-Test.create([
+tests = Test.create!([
   {title: 'Ruby', category_id: 2},
   {title: 'Rails', category_id: 2},
   {title: 'HTML', category_id: 1},
@@ -22,12 +22,12 @@ Test.create([
   {title: 'HTML', level: 2, category_id: 1},
   {title: 'CSS', level: 2, category_id: 1}
   ])
-User.create([
+users = User.create!([
   {name: 'Bob', test_id: 1},
   {name: 'Tom', test_id: 6},
   {name: 'Tim', test_id: 7}
   ])
-Question.create([
+questions = Question.create!([
   {body: '1 any question', test_id: 1},
   {body: '2 any question', test_id: 1},
   {body: '3 any question', test_id: 1},
@@ -45,7 +45,7 @@ Question.create([
   {body: '15 any question', test_id: 10},
   {body: '16 any question', test_id: 10},
   ])
-Answer.create([
+answers = Answer.create!([
   {body: '1 any answer', question_id: 1},
   {body: '2 any answer', question_id: 1},
   {body: '3 any answer', question_id: 1},
@@ -82,4 +82,16 @@ Answer.create([
   {body: '2 any answer', question_id: 11},
   {body: '3 any answer', question_id: 11, correct: true},
   {body: '4 any answer', question_id: 11},
+  ])
+user_tests = User_test.create!([
+  {user_id: 1, test_id: 1},
+  {user_id: 1, test_id: 2},
+  {user_id: 1, test_id: 3},
+  {user_id: 1, test_id: 4},
+  {user_id: 1, test_id: 5},
+  {user_id: 2, test_id: 1},
+  {user_id: 2, test_id: 2},
+  {user_id: 2, test_id: 3},
+  {user_id: 2, test_id: 4},
+  {user_id: 2, test_id: 6}
   ])
