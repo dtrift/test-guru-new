@@ -9,23 +9,23 @@ categories = Category.create!([
   {title: 'Frontend'}, {title: 'Backend'}
   ])
 tests = Test.create!([
-  {title: 'Ruby', category_id: 2},
-  {title: 'Rails', category_id: 2},
-  {title: 'HTML', category_id: 1},
-  {title: 'CSS', category_id: 1},
-  {title: 'Ruby', level: 1, category_id: 2},
-  {title: 'Rails', level: 1, category_id: 2},
-  {title: 'HTML', level: 1, category_id: 1},
-  {title: 'CSS', level: 1, category_id: 1},
-  {title: 'Ruby', level: 2, category_id: 2},
-  {title: 'Rails', level: 2, category_id: 2},
-  {title: 'HTML', level: 2, category_id: 1},
-  {title: 'CSS', level: 2, category_id: 1}
+  {title: 'Ruby level 0', category_id: 2},
+  {title: 'Rails level 0', category_id: 2},
+  {title: 'HTML level 0', category_id: 1},
+  {title: 'CSS level 0', category_id: 1},
+  {title: 'Ruby level 1', level: 1, category_id: 2},
+  {title: 'Rails level 1', level: 1, category_id: 2},
+  {title: 'HTML level 1', level: 1, category_id: 1},
+  {title: 'CSS level 1', level: 1, category_id: 1},
+  {title: 'Ruby level 2', level: 2, category_id: 2},
+  {title: 'Rails level 2', level: 2, category_id: 2},
+  {title: 'HTML level 2', level: 2, category_id: 1},
+  {title: 'CSS level 2', level: 2, category_id: 1}
   ])
 users = User.create!([
-  {name: 'Bob', test_id: 1},
-  {name: 'Tom', test_id: 6},
-  {name: 'Tim', test_id: 7}
+  {name: 'Bob'},
+  {name: 'Tom'},
+  {name: 'Tim'}
   ])
 questions = Question.create!([
   {body: '1 any question', test_id: 1},
