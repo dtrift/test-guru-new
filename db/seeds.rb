@@ -14,18 +14,18 @@ categories = Category.create!([
   {title: 'Frontend'}, {title: 'Backend'}
   ])
 tests = Test.create!([
-  {title: 'Ruby level 0', category_id: categories[1].id},
-  {title: 'Rails level 0', category_id: categories[1].id},
-  {title: 'HTML level 0', category_id: categories[0].id},
-  {title: 'CSS level 0', category_id: categories[0].id},
-  {title: 'Ruby level 1', level: 1, category_id: categories[1].id},
-  {title: 'Rails level 1', level: 1, category_id: categories[1].id},
-  {title: 'HTML level 1', level: 1, category_id: categories[0].id},
-  {title: 'CSS level 1', level: 1, category_id: categories[0].id},
-  {title: 'Ruby level 2', level: 2, category_id: categories[1].id},
-  {title: 'Rails level 2', level: 2, category_id: categories[1].id},
-  {title: 'HTML level 2', level: 2, category_id: categories[0].id},
-  {title: 'CSS level 2', level: 2, category_id: categories[0].id}
+  {title: 'Ruby level 0', category_id: categories[1].id, user_id: users[0].id},
+  {title: 'Rails level 0', category_id: categories[1].id, user_id: users[0].id},
+  {title: 'HTML level 0', category_id: categories[0].id, user_id: users[0].id},
+  {title: 'CSS level 0', category_id: categories[0].id, user_id: users[0].id},
+  {title: 'Ruby level 1', level: 1, category_id: categories[1].id, user_id: users[0].id},
+  {title: 'Rails level 1', level: 1, category_id: categories[1].id, user_id: users[0].id},
+  {title: 'HTML level 1', level: 1, category_id: categories[0].id, user_id: users[0].id},
+  {title: 'CSS level 1', level: 1, category_id: categories[0].id, user_id: users[0].id},
+  {title: 'Ruby level 2', level: 2, category_id: categories[1].id, user_id: users[1].id},
+  {title: 'Rails level 2', level: 2, category_id: categories[1].id, user_id: users[1].id},
+  {title: 'HTML level 2', level: 2, category_id: categories[0].id, user_id: users[1].id},
+  {title: 'CSS level 2', level: 2, category_id: categories[0].id, user_id: users[1].id}
   ])
 questions = Question.create!([
   {body: '1 any question', test_id: tests[0].id},
