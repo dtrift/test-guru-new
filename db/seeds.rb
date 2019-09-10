@@ -5,6 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+users = User.create!([
+  {name: 'Bob'},
+  {name: 'Tom'},
+  {name: 'Tim'}
+  ])
 categories = Category.create!([
   {title: 'Frontend'}, {title: 'Backend'}
   ])
@@ -21,11 +26,6 @@ tests = Test.create!([
   {title: 'Rails level 2', level: 2, category_id: categories[1].id},
   {title: 'HTML level 2', level: 2, category_id: categories[0].id},
   {title: 'CSS level 2', level: 2, category_id: categories[0].id}
-  ])
-users = User.create!([
-  {name: 'Bob'},
-  {name: 'Tom'},
-  {name: 'Tim'}
   ])
 questions = Question.create!([
   {body: '1 any question', test_id: tests[0].id},
