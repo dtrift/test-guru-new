@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_09_141852) do
+ActiveRecord::Schema.define(version: 2019_09_11_153840) do
 
   create_table "answers", force: :cascade do |t|
     t.boolean "correct", default: false
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 2019_09_09_141852) do
     t.text "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email", null: false
   end
 
 end
