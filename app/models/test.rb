@@ -10,7 +10,7 @@ class Test < ApplicationRecord
   validates :level, numericality: { only_integer: true, greater_than: 0 }
 
   scope :easy, -> { where(level: 0..1) }
-  scope :midium, -> { where(level: 2..4) }
+  scope :medium, -> { where(level: 2..4) }
   scope :hard, -> { where(level: 5..Float::INFINITY) }
   scope :desc_category_title, ->(c_title) { categories.where(title: c_title)
     .order(title: :desc).pluck(:title) }
