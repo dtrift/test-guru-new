@@ -6,9 +6,7 @@ class User < ApplicationRecord
   validates :name, :email, presence: true
   validates :email, format: /\w+@\w+\.{1}[a-zA-Z]{2,}/
 
-  scope :all_tests, ->(level_test) { tests.where(level: level_test) }
-
-  # def all_tests(level_test)
-  #   tests.where(level: level_test)
-  # end
+  def all_tests(level_test)
+    tests.where(level: level_test)
+  end
 end

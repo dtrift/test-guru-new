@@ -4,11 +4,11 @@ class Answer < ApplicationRecord
   validates :body, presence: true
   validate :count, on: :create
 
-  scope :correct, -> { whhere(correct: true) }
+  scope :correct, -> { where(correct: true) }
 
   private
   
   def count
-    errors.add(:category_id) if question.answers.count > 4
+    errors.add(:category_id, 'Количество ответов для одного вопроса от 1 до 4') if question.answers.count >= 4
   end
 end

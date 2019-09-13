@@ -11,7 +11,8 @@ users = User.create!([
   {name: 'Tim', email: 'tim@gmail.com'}
   ])
 categories = Category.create!([
-  {title: 'Frontend'}, {title: 'Backend'}
+  {title: 'Frontend'}, 
+  {title: 'Backend'}
   ])
 tests = Test.create!([
   {title: 'Ruby level 0', category_id: categories[1].id, user_id: users[0].id},
@@ -28,22 +29,27 @@ tests = Test.create!([
   {title: 'CSS level 2', level: 2, category_id: categories[0].id, user_id: users[1].id}
   ])
 questions = Question.create!([
-  {body: '1 any question', test_id: tests[0].id},
-  {body: '2 any question', test_id: tests[0].id},
-  {body: '3 any question', test_id: tests[0].id},
-  {body: '4 any question', test_id: tests[0].id},
-  {body: '5 any question', test_id: tests[5].id},
-  {body: '6 any question', test_id: tests[5].id},
-  {body: '7 any question', test_id: tests[5].id},
-  {body: '8 any question', test_id: tests[5].id},
-  {body: '9 any question', test_id: tests[6].id},
-  {body: '10 any question', test_id: tests[6].id},
-  {body: '11 any question', test_id: tests[6].id},
-  {body: '12 any question', test_id: tests[6].id},
-  {body: '13 any question', test_id: tests[9].id},
-  {body: '14 any question', test_id: tests[9].id},
-  {body: '15 any question', test_id: tests[9].id},
-  {body: '16 any question', test_id: tests[9].id}
+  {body: '1 any question for test id 1 ', test_id: tests[0].id},
+  {body: '2 any question for test id 1', test_id: tests[0].id},
+  {body: '3 any question for test id 1', test_id: tests[0].id},
+  {body: '4 any question for test id 1', test_id: tests[0].id},
+  {body: '5 any question for test id 6', test_id: tests[5].id},
+  {body: '6 any question for test id 6', test_id: tests[5].id},
+  {body: '7 any question for test id 6', test_id: tests[5].id},
+  {body: '8 any question for test id 6', test_id: tests[5].id},
+  {body: '9 any question for test id 7', test_id: tests[6].id},
+  {body: '10 any question for test id 7', test_id: tests[6].id},
+  {body: '11 any question for test id 7', test_id: tests[6].id},
+  {body: '12 any question for test id 7', test_id: tests[6].id},
+  {body: '13 any question for test id 10', test_id: tests[9].id},
+  {body: '14 any question for test id 10', test_id: tests[9].id},
+  {body: '15 any question for test id 10', test_id: tests[9].id},
+  {body: '16 any question for test id 10', test_id: tests[9].id},
+  {body: '17 any question for test id 12', test_id: tests[11].id},
+  {body: '18 any question for test id 12', test_id: tests[11].id},
+  {body: '19 any question for test id 12', test_id: tests[11].id},
+  {body: '20 any question for test id 12', test_id: tests[11].id},
+  {body: '21 any question for test id 12', test_id: tests[11].id}
   ])
 answers = Answer.create!([
   {body: '1 any answer for 1 question', question_id: questions[0].id},
