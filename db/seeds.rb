@@ -29,7 +29,7 @@ tests = Test.create!([
   {title: 'CSS level 2', level: 2, category_id: categories[0].id, user_id: users[1].id}
   ])
 questions = Question.create!([
-  {body: '1 any question for test id 1 ', test_id: tests[0].id},
+  {body: '1 any question for test id 1', test_id: tests[0].id},
   {body: '2 any question for test id 1', test_id: tests[0].id},
   {body: '3 any question for test id 1', test_id: tests[0].id},
   {body: '4 any question for test id 1', test_id: tests[0].id},

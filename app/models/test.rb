@@ -5,6 +5,7 @@ class Test < ApplicationRecord
   has_many :users, through: :user_tests
   has_many :questions, dependent: :destroy
 
+  validates_uniqueness_of :title, scope: :level
   validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
   scope :easy, -> { where(level: 0..1) }
