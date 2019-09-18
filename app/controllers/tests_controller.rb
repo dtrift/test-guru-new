@@ -1,11 +1,10 @@
 class TestsController < ApplicationController
   def index
-    render json: { questions: Question.all }
-    # render plain: 'All Questions'
+    render json: { tests: Test.all }
   end
 
   def show
-    # render plain: 'Some Question'
+    redirect_to root_path
   end
 
   def new
@@ -13,15 +12,14 @@ class TestsController < ApplicationController
   end
 
   def create
-    # result = ["Class: #{params.class}", "Parameters: #{params.inspect}"]
-    # render plain: result.join("\n")
-    test = Test.create(test_params)
+    test = Test.create!(test_params)
+
     render plain: test.inspect
   end
 
   private
 
-  def question_params
-    params.require(:test).permit(:body, :level)
+  def test_params
+    params.require(:test).permit(:title, :level, :category_id, :user_id)
   end
 end

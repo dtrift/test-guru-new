@@ -17,12 +17,4 @@ class Test < ApplicationRecord
   def desc_category_title
     desc_category.pluck(:title)
   end
-
-  # def self.desc_category_title(c_title)
-  #   joins(:category).where(categories: {title: c_title})
-  #     .order(title: :desc).pluck(:title)
-  # end
-  #
-  # scope :desc_category_title, -> { desc_category.pluck(:title) }
-
 end
