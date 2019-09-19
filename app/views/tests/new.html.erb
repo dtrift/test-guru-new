@@ -12,16 +12,6 @@
     <input type="text" name="test[level]" id="test-level">
   </p><br>
 
-<!--   <p>
-    <label for="test-category_id">Category ID:</label>
-    <input type="Text" name="test[category_id]" id="test-category">
-  </p><br> -->
-
-<!--   <p>
-    <label for="test-user_id">Author ID:</label>
-    <input type="Text" name="test[user_id]" id="test-user_id">
-  </p><br> -->
-
   <p>
     <label for="test-category_id">Category:</label>
     <%= select("test", "category_id", Category.all.collect { |p| [ p.title, p.id ] }) %>
