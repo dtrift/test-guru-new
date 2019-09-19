@@ -23,12 +23,12 @@
   </p><br> -->
 
   <p>
-    <label for="test-category_id">Category: </label>
+    <label for="test-category_id">Category:</label>
     <%= select("test", "category_id", Category.all.collect { |p| [ p.title, p.id ] }) %>
   </p><br>
 
   <p>
-    <label for="test-user_id">Author: </label>
+    <label for="test-user_id">Author:</label>
     <%= select("test", "user_id", User.all.collect { |p| [ p.name, p.id ] }) %>
   </p><br>
 

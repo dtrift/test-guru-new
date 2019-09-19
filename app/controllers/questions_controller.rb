@@ -5,7 +5,6 @@ class QuestionsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
   def index
-    # @questions = Question.all
     @questions = @test.questions.all
     render json: { questions: @questions }
   end
@@ -14,12 +13,10 @@ class QuestionsController < ApplicationController
     render inline: '<%= @question.body %>'
   end
 
-  def new
-
-  end
+  def new; end
 
   def create
-    @question = Question.create!(question_params)
+    @question = @test.questions.create!(question_params)
 
     render plain: @question.inspect
   end
@@ -32,7 +29,7 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-    params.require(:question).permit(:body, :test_id)
+    params.require(:question).permit(:body)
   end
 
   def find_test
@@ -44,6 +41,6 @@ class QuestionsController < ApplicationController
   end
 
   def rescue_with_question_not_found
-    render plain: "Question was not found"
+    render plain: 'Question was not found'
   end
 end

@@ -4,16 +4,15 @@ class TestsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
   def index
-    render json: { tests: Test.all }
+    @tests = Test.all
+    render json: { tests: @tests.pluck(:title) }
   end
 
   def show
     render inline: '<%= @test.title %>'
   end
 
-  def new
-    
-  end
+  def new; end
 
   def create
     @test = Test.create!(test_params)
@@ -32,6 +31,6 @@ class TestsController < ApplicationController
   end
 
   def rescue_with_test_not_found
-    render plain: "Test was not found"
+    render plain: 'Test was not found'
   end
 end
