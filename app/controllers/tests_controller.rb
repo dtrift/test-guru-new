@@ -5,11 +5,12 @@ class TestsController < ApplicationController
 
   def index
     @tests = Test.all
-    render json: { tests: @tests.pluck(:title) }
+    # render json: { tests: @tests.pluck(:title) }
   end
 
   def show
-    render inline: '<%= @test.title %>'
+    @test = Test.find(params[:id])
+    # render inline: '<%= @test.title %>'
   end
 
   def new; end
