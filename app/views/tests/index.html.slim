@@ -7,9 +7,9 @@ table
     th Level
     th Author
 
-  - @tests.each do |test|
-    tr
-      td test.id 
-      td test.title
-      td test.level
-      td test.author.name
+    - @tests.each do |test|
+      tr
+        td = test.id 
+        td = test.title
+        td = test.level
+        td = test.author.name
