@@ -1,0 +1,15 @@
+h1 Tests
+
+table
+  tr
+    th ID
+    th Title
+    th Level
+    th Author
+
+  - @tests.each do |test|
+    tr
+      td test.id 
+      td test.title
+      td test.level
+      td test.author.name
