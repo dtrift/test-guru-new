@@ -9,6 +9,7 @@ class TestsController < ApplicationController
 
   def show
     @test = Test.find(params[:id])
+    @test_questions = @test.questions
   end
 
   def new
