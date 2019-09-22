@@ -15,7 +15,10 @@ p
   = @test.created_at
 
 p
-  h1 Test questions:
+  h2 Test questions:
+  = link_to 'Add question', new_test_question_path(@test[:id])
+  
+  p
   - @test_questions.each do |question|
     li = link_to question.body
 
