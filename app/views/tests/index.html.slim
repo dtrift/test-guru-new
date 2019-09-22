@@ -1,15 +1,13 @@
 h1 Tests
 
+p
+  = link_to 'New test', new_test_path
+
 table
   tr
     th ID
     th Title
     th Level
     th Author
-
-  - @tests.each do |test|
-    tr
-      td = test.id 
-      td = test.title
-      td = test.level
-      td = test.author.name
+    th colspan=2 Actions
+  = render @tests
