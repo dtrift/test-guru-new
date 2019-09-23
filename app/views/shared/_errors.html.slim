@@ -1,0 +1,9 @@
+if 
+  - resource.errors.present?
+  div
+    h2 
+      = pluralize(@test.errors.count, 'error')
+
+    ul
+      - @test.errors.full_messages.each do |message|
+        li = message

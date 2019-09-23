@@ -1,23 +1,43 @@
 class TestsController < ApplicationController
-  before_action :find_test, only: %i[show]
+  before_action :find_test, only: %i[show edit update destroy]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
   def index
     @tests = Test.all
-    render json: { tests: @tests.pluck(:title) }
   end
 
   def show
-    render inline: '<%= @test.title %>'
+    @test_questions = @test.questions
   end
 
-  def new; end
+  def new
+    @test = Test.new
+  end
 
   def create
-    @test = Test.create!(test_params)
+    @test = Test.create(test_params)
 
-    render plain: @test.inspect
+    if @test.save
+      redirect_to @test
+    else
+      render :new
+    end
+  end
+
+  def edit; end
+
+  def update
+    if @test.update(test_params)
+      redirect_to @test
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @test.destroy
+    redirect_to tests_path
   end
 
   private
