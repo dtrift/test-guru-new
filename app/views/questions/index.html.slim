@@ -1,1 +1,10 @@
-h1 Questions
+p
+  h2 Test questions:
+  = link_to 'Add question', new_test_question_path(@test[:id])
+
+table
+  tr
+    th Body
+    th colspan=2 Actions
+
+  = render @test.questions

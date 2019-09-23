@@ -2,8 +2,8 @@ if
   - resource.errors.present?
   div
     h2 
-      = pluralize(@test.errors.count, 'error')
+      = pluralize(resource.errors.count, 'error')
 
     ul
-      - @test.errors.full_messages.each do |message|
+      - resource.errors.full_messages.each do |message|
         li = message
