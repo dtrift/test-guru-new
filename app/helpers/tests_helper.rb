@@ -4,4 +4,9 @@ module TestsHelper
   def test_level(test)
     TEST_LEVELS[test.level] || :Ninja
   end
+
+  def test_header(test)
+    test_title = test.title
+    test.new_record? ? "Create new test" : "Edit test: #{test_title}"
+  end
 end

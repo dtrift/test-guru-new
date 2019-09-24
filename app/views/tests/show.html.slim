@@ -14,8 +14,17 @@ p
   strong Created date: 
   = @test.created_at
 
-p 
-  = render template:  'questions/index'
+p
+  h2 Test questions:
+  = link_to 'Add question', new_test_question_path(@test[:id])
+
+table
+  tr
+    th Body
+    th colspan=2 Actions
+
+  = render @test.questions
 
 = link_to 'Edit', edit_test_path(@test)
+span  | 
 = link_to 'Back', tests_path

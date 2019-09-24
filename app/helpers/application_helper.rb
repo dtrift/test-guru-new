@@ -1,6 +1,6 @@
 module ApplicationHelper
   def current_date
-    Time.now.strftime("%m.%d.%Y")
+    Date.current
   end
 
   def github_url(author, repo)
