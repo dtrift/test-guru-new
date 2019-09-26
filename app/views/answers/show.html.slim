@@ -1,6 +1,13 @@
-p#notice = notice
+h1 Question:
 
+p = @answer.question.body
 
-=> link_to 'Edit', edit_answer_path(@answer)
-'|
-=< link_to 'Back', answer_path(@answer)
+p 
+  b Answer: 
+  = @answer.body
+
+p
+  b Correct: 
+  = @answer.correct
+
+= link_to 'Back', question_path(@answer.question)

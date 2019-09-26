@@ -1,8 +1,7 @@
-h1 Editing answer
+h1 Edit answer
+p = @answer.question.body
 
-== render 'form'
+= render 'form'
 
-=> link_to 'Show', @answer
-'|
-=< link_to 'Back', answer_path(@answer)
+= link_to 'Back', question_path(@answer.question)
 
