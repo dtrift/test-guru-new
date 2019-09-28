@@ -89,15 +89,15 @@ answers = Answer.create!([
   {body: '3 any answer for 11 question', question_id: questions[10].id, correct: true},
   {body: '4 any answer for 11 question', question_id: questions[10].id}
   ])
-user_tests = UserTest.create!([
-  {user_id: users[0].id, test_id: tests[0].id},
-  {user_id: users[0].id, test_id: tests[1].id},
-  {user_id: users[0].id, test_id: tests[2].id},
-  {user_id: users[0].id, test_id: tests[3].id},
-  {user_id: users[0].id, test_id: tests[4].id},
-  {user_id: users[1].id, test_id: tests[0].id},
-  {user_id: users[1].id, test_id: tests[1].id},
-  {user_id: users[1].id, test_id: tests[2].id},
-  {user_id: users[1].id, test_id: tests[3].id},
-  {user_id: users[1].id, test_id: tests[5].id}
-  ])
+# user_tests = UserTest.create!([
+#   {user_id: users[0].id, test_id: tests[0].id},
+#   {user_id: users[0].id, test_id: tests[1].id},
+#   {user_id: users[0].id, test_id: tests[2].id},
+#   {user_id: users[0].id, test_id: tests[3].id},
+#   {user_id: users[0].id, test_id: tests[4].id},
+#   {user_id: users[1].id, test_id: tests[0].id},
+#   {user_id: users[1].id, test_id: tests[1].id},
+#   {user_id: users[1].id, test_id: tests[2].id},
+#   {user_id: users[1].id, test_id: tests[3].id},
+#   {user_id: users[1].id, test_id: tests[5].id}
+#   ])
