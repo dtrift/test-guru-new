@@ -19,6 +19,10 @@ class TestPassagesController < ApplicationController
     end
   end
 
+  def one
+    @one = 1
+  end
+
   private
 
   def find_test_passage
