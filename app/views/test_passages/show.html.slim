@@ -11,5 +11,5 @@ b #{@test_passage.current_question.body}
   = f.submit 'Next'
 
 br
-b Current question: #{@test_passage.current_question.id}
+b Current question: #{@test_passage.index_current_question}
   | Questions count: #{@test_passage.test.questions.count}
