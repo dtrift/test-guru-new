@@ -1,5 +1,4 @@
 h1 The #{@test_passage.test.title} test was completed
-h2 Result: #{@test_passage.score}%
 - if @test_passage.score_positive?
   = render 'positive'
 - else

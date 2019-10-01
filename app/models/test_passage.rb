@@ -29,7 +29,7 @@ class TestPassage < ApplicationRecord
   end
 
   def score_positive?
-    score >= 85
+    score >= POSITIVE_SCORE
   end
 
   private
