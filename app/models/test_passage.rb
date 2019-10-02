@@ -5,8 +5,7 @@ class TestPassage < ApplicationRecord
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
 
-  before_validation :before_validation_set_first_question, on: :create
-  before_update :before_update_set_next_question, on: :update
+  before_validation :set_current_question
 
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
@@ -17,23 +16,12 @@ class TestPassage < ApplicationRecord
     current_question.nil?
   end
 
-  def index_current_question
-    # test.questions.order(:index).where('index = ?', test.questions.id).index
-    # test.questions.where('id = ?', current_question.id)
-    # test.questions.where('id = ?', current_question.id).first.index
-    # test.questions(current_question[:id])
-    # test.questions.order(:id).where('id > ?', current_question.id).first.id - 1
-    # test.questions.where('id > ?', current_question.id).index + 1
-    # self.current_question.index
-    # test.questions.where('id > ?', current_question.id).index + 1
-    # test.questions(current_question[:id])
-    # test.questions.order(:id).where('id > ?', current_question.id)
-    # self.current_question[:id]
-    # test.questions.index(current_question) + 1
+  def index_current_question # я не понимаю как получить номер текущего вопроса делая запрос в базу
+    test.questions.order(:index).where('id = ?', current_question.id)
   end
 
   def score
-    (100 / test.questions.count) * correct_questions.to_f
+    (100 / test.questions.count).to_f * correct_questions
   end
 
   def score_positive?
@@ -42,15 +30,20 @@ class TestPassage < ApplicationRecord
 
   private
 
-  def before_validation_set_first_question
-    self.current_question = test.questions.first if test.present?
+  def set_current_question
+    self.current_question = next_question
   end
 
-  def before_update_set_next_question
-    self.current_question = test.questions.order(:id).where('id > ?', current_question.id).first
+  def next_question
+    if current_question.nil?
+      self.current_question = test.questions.first
+    else
+      self.current_question = test.questions.order(:id).where('id > ?', current_question.id).first
+    end
   end
 
   def correct_answer?(answer_ids)
+    answer_ids ||= []
     correct_answers.ids.sort == answer_ids.map(&:to_i).sort
   end
 
