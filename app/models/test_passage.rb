@@ -9,10 +9,7 @@ class TestPassage < ApplicationRecord
   before_update :before_update_set_next_question, on: :update
 
   def accept!(answer_ids)
-    if correct_answer?(answer_ids)
-      self.correct_questions += 1
-    end
-
+    self.correct_questions += 1 if correct_answer?(answer_ids)
     save!
   end
 
@@ -21,11 +18,22 @@ class TestPassage < ApplicationRecord
   end
 
   def index_current_question
-    test.questions.index(current_question) + 1
+    # test.questions.order(:index).where('index = ?', test.questions.id).index
+    # test.questions.where('id = ?', current_question.id)
+    # test.questions.where('id = ?', current_question.id).first.index
+    # test.questions(current_question[:id])
+    # test.questions.order(:id).where('id > ?', current_question.id).first.id - 1
+    # test.questions.where('id > ?', current_question.id).index + 1
+    # self.current_question.index
+    # test.questions.where('id > ?', current_question.id).index + 1
+    # test.questions(current_question[:id])
+    # test.questions.order(:id).where('id > ?', current_question.id)
+    # self.current_question[:id]
+    # test.questions.index(current_question) + 1
   end
 
   def score
-    (100 / test.questions.count) * correct_questions
+    (100 / test.questions.count) * correct_questions.to_f
   end
 
   def score_positive?
@@ -49,8 +57,4 @@ class TestPassage < ApplicationRecord
   def correct_answers
     current_question.answers.correct
   end
-
-  # def score
-  #   (100 / test.questions.count) * correct_questions
-  # end
 end
