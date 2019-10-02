@@ -16,8 +16,8 @@ class TestPassage < ApplicationRecord
     current_question.nil?
   end
 
-  def index_current_question # я не понимаю как получить номер текущего вопроса делая запрос в базу
-    test.questions.order(:index).where('id = ?', current_question.id)
+  def index_current_question
+    test.questions.order(:id).where('id <= ?', current_question.id).count
   end
 
   def score
@@ -35,7 +35,7 @@ class TestPassage < ApplicationRecord
   end
 
   def next_question
-    if current_question.nil?
+    if new_record?
       self.current_question = test.questions.first
     else
       self.current_question = test.questions.order(:id).where('id > ?', current_question.id).first
@@ -43,8 +43,7 @@ class TestPassage < ApplicationRecord
   end
 
   def correct_answer?(answer_ids)
-    answer_ids ||= []
-    correct_answers.ids.sort == answer_ids.map(&:to_i).sort
+    correct_answers.ids.sort == Array(answer_ids).map(&:to_i).sort
   end
 
   def correct_answers
