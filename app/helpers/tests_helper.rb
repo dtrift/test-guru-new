@@ -7,6 +7,6 @@ module TestsHelper
 
   def test_header(test)
     test_title = test.title
-    test.new_record? ? "Create new test" : "Edit test: #{test_title}"
+    test.persisted? ? "Edit test: #{test_title}" : "Create new test"
   end
 end

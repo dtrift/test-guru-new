@@ -1,0 +1,7 @@
+h1 The #{@test_passage.test.title} test was completed
+- if @test_passage.score_positive?
+  = render 'positive'
+- else
+  = render 'negative'
+
+= link_to 'Go to tests', tests_path
