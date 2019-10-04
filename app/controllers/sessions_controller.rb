@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to tests_path
     else
-      flash.now[:alert] =  'Are you a Guru? Verify your email and password. Lets Do It )'
+      flash.now[:alert] =  'Are you a Guru? Verify your email and password. You can! Lets Do It )'
       render :new
     end
   end
