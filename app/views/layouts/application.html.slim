@@ -9,6 +9,13 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
   body
+    - if logged_in?
+      table
+        tr
+          th
+            = link_to 'Test Guru App', root_path
+          th Welcome, #{current_user.name} Guru | #{ link_to 'Logout'}
+
     = yield
 
     br
