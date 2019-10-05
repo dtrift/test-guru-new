@@ -7,7 +7,8 @@ class ApplicationController < ActionController::Base
     unless current_user
       redirect_to login_path
     end
-    # cookies[:email] = current_user.email
+    cookies[:email] = current_user&.email
+    cookies[:id] = current_user&.id
   end
 
   def current_user

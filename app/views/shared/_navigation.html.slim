@@ -1,0 +1,6 @@
+- if logged_in?
+    h2
+      = link_to 'Test Guru App ', root_path
+      |
+        Welcome, #{current_user.name} Guru | #{link_to 'Logout', logout_path}
+br

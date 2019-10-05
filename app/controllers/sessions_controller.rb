@@ -12,4 +12,9 @@ class SessionsController < ApplicationController
       render :new
     end
   end
+
+  def delete
+    session.destroy
+    redirect_to :login
+  end
 end
