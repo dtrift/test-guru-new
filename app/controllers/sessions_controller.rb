@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
   end
 
   def delete
-    session.destroy
+    reset_session
     redirect_to :login
   end
 end
