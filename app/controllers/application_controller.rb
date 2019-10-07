@@ -1,10 +1,11 @@
 class ApplicationController < ActionController::Base
   helper_method :current_user, :logged_in?
-  
+
   private
 
   def authenticate_user!
     unless current_user
+      request_url
       redirect_to login_path
     end
     cookies[:email] = current_user&.email
@@ -17,5 +18,9 @@ class ApplicationController < ActionController::Base
 
   def logged_in?
     current_user.present?
+  end
+
+  def request_url
+    cookies[:request_url] = request.url if cookies[:request_url].nil?
   end
 end
