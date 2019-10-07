@@ -21,6 +21,6 @@ class ApplicationController < ActionController::Base
   end
 
   def request_url
-    cookies[:request_url] = request.url if cookies[:request_url].nil?
+    cookies[:request_url] = request.url
   end
 end
