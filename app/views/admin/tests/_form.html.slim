@@ -1,5 +1,5 @@
 h1 = test_header(@test)
-= form_with model: @test, local: true do |f|
+= form_with model: [:admin, @test], local: true do |f|
   = render 'shared/errors', resource: @test
 
   p
@@ -19,7 +19,7 @@ h1 = test_header(@test)
 
   p
     = f.label :author
-    = f.collection_select :user_id, User.all, :id, :name, promt: true
+    = f.collection_select :user_id, User.all, :id, :first_name, promt: true
   br
 
   = f.submit

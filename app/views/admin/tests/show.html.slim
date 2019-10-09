@@ -8,7 +8,7 @@ p
 
 p
   strong Author: 
-  = @test.author.name
+  = @test.author.first_name
 
 p
   strong Created date: 
@@ -23,8 +23,9 @@ table
     th Body
     th colspan=2 Actions
 
-  = render @test.questions
+  / = render @test.questions
+  = render partial: 'questions/question', collection: @test.questions
 
-= link_to 'Edit', edit_test_path(@test)
+= link_to 'Edit', edit_admin_test_path(@test)
 span  | 
-= link_to 'Back', tests_path
+= link_to 'Back', admin_tests_path
