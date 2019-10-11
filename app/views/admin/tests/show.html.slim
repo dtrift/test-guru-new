@@ -16,15 +16,14 @@ p
 
 p
   h2 Test questions:
-  = link_to 'Add question', new_test_question_path(@test)
+  = link_to 'Add question', new_admin_test_question_path(@test)
 
 table
   tr
     th Body
     th colspan=2 Actions
 
-  / = render @test.questions
-  = render partial: 'questions/question', collection: @test.questions
+  = render partial: 'admin/questions/question', collection: @test.questions
 
 = link_to 'Edit', edit_admin_test_path(@test)
 span  | 

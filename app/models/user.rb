@@ -11,7 +11,7 @@ class User < ApplicationRecord
   has_many :tests, through: :test_passages
   has_many :created_tests, class_name: 'Test', foreign_key: :user_id
 
-  # validates :name, :email, presence: true 
+  validates :first_name, :email, presence: true 
   # validates :email, format: /\w+@\w+\.{1}[a-zA-Z]{2,}/, uniqueness: true
 
   def all_tests(level_test)
