@@ -19,4 +19,12 @@ class ApplicationController < ActionController::Base
         #   :password_confirmation, :current_password
         # ])
   end
+
+  def redirect_after_sign_in(user)
+    if user.admin?
+      redirect_to admin_tests_path
+    else
+      redirect_to root_path
+    end
+  end
 end
