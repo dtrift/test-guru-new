@@ -1,0 +1,30 @@
+p
+  strong Title: 
+  = @test.title
+
+p
+  strong Level: 
+  = @test.level
+
+p
+  strong Author: 
+  = @test.author.first_name
+
+p
+  strong Created date: 
+  = @test.created_at
+
+p
+  h2 Test questions:
+  = link_to 'Add question', new_admin_test_question_path(@test)
+
+table
+  tr
+    th Body
+    th colspan=2 Actions
+
+  = render partial: 'admin/questions/question', collection: @test.questions
+
+= link_to 'Edit test', edit_admin_test_path(@test)
+span  | 
+= link_to 'Back', admin_tests_path

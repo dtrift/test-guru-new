@@ -1,0 +1,15 @@
+h1 Tests
+
+p
+  = link_to 'New test', new_admin_test_path
+
+table
+  tr
+    th ID
+    th Title
+    th Level
+    th Questions count
+    th Author
+    th colspan=2 Actions
+
+  = render @tests
