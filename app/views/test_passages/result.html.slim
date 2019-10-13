@@ -1,4 +1,4 @@
-h1 The #{@test_passage.test.title} test was completed
+h1 = t('.header', title: @test_passage.test.title)
 - if @test_passage.score_positive?
   = render 'positive'
 - else

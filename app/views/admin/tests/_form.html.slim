@@ -13,7 +13,7 @@ h1 = test_header(@test)
   br
 
   p
-    = f.label :category
+    = f.label :category_id
     = f.collection_select :category_id, Category.all, :id, :title, promt: true
   br
 

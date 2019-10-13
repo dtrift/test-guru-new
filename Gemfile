@@ -64,4 +64,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'slim-rails'
 gem 'pg'
+
+# Auth
 gem 'devise', '~> 4.0'
+
+# Localization
+gem 'rails-i18n', '~> 5.0.4'
