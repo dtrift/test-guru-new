@@ -1,15 +1,15 @@
 h1 = t('.header')
 
 p
-  = link_to 'New test', new_admin_test_path
+  = link_to t('.new_test'), new_admin_test_path
 
 table
   tr
-    th ID
-    th Title
-    th Level
-    th Questions count
-    th Author
-    th colspan=2 Actions
+    th = t('.id')
+    th = t('.title')
+    th = t('.level')
+    th = t('.questions_count')
+    th = t('.author')
+    th colspan=2 = t('.actions')
 
   = render @tests

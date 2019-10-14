@@ -1,4 +1,4 @@
-h1 Passing the #{@test_passage.test.title} Test
+h1 = t('.header', test: @test_passage.test.title)
 
 b #{@test_passage.current_question.body}
 
@@ -8,8 +8,9 @@ b #{@test_passage.current_question.body}
     p
      = b.check_box id: "answer_ids_#{b.object.id}"
      = b.label
-  = f.submit 'Next'
+  = f.submit t('.next')
 
 br
-b Current question: #{@test_passage.index_current_question}
-  | Questions count: #{@test_passage.test.questions.size}
+b = t('.current_question_index', index: @test_passage.index_current_question)
+'  |
+b = t('.questions_count', count: @test_passage.test.questions.size)

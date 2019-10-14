@@ -1,9 +1,11 @@
 en:
+# Views
   helpers:
     submit:
       test:
         create: "Create test"
         update: "Update test"
+
     label:
       test:
         title: "Title"
@@ -24,6 +26,8 @@ en:
     result:
       header: "Test %{title} was completed"
 
+  # Controllers
+  
   admin:
     tests:
       create:

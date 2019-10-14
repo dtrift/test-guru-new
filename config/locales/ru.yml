@@ -4,10 +4,11 @@ ru:
       test:
         create: "Создать тест"
         update: "Обновить тест"
+
     label:
       test:
         title: "Название"
-        level: "Уровень сложности"
+        level: "Уровень"
         category_id: "Категория"
 
   shared:
@@ -16,23 +17,78 @@ ru:
         few: "Обнаружено %{count} ошибки"
         many: "Обнаружено %{count} ошибок"
         one: "Обнаружена %{count} ошибка"
-        other: "Обнаружено %{count} ошибки"     
+        other: "Обнаружено %{count} ошибки" 
+    navigation:
+      welcome: "Добро пожаловать, %{user} Гуру"
+      logout: "Выход"    
 
   tests:
     index:
       header: "Доступные тесты"
+      id: "Номер"
+      title: "Название"
+      level: "Уровень"
+      questions_count: "Количество вопросов"
+      author: "Автор"
+      action: "Действие"
+    test:
+      start: "Начать"
 
   test_passages:
+    show:
+      header: "Прохождение теста %{test}"
+      next: "Следующий вопрос"
+      current_question_index: "Текущий вопрос: %{index}"
+      questions_count: "Количество вопросов: %{count}"
     result:
-      header: "Тест %{title} успешно завершён"
+      header: "Тест %{title} завершён"
+      go_to_tests: "Список тестов"
+    positive:
+      result: "Результат: %{score}%"
+      positive: "Результат положительный"
+    negative:
+      result: "Результат: %{score}%"
+      negative: "Результат отрицательный"
 
   admin:
+    navigation:
+      admin_panel: "Панель администратора"
+      welcome: "Добро пожаловать, %{user} Гуру"
+      logout: "Выход"
     tests:
-      create:
-        success: "Тест успешно создан"
+      show:
+        test_title: "Название теста"
+        test_level: "Уровень"
+        author: "Автор"
+        created_date: "Дата создания"
+        add_question: "Добавить вопрос"
+        edit_test: "Редактировать тест"
+        back: "Назад"
+        header: "Вопросы теста"
+        body: "Вопрос"
+        actions: "Действие"
       index:
         header: "Доступные тесты"
+        new_test: "Новый тест"
+        id: "Номер"
+        title: "Название"
+        level: "Уровень"
+        questions_count: "Количество вопросов"
+        author: "Автор"
+        actions: "Действие"
+      create:
+        success: "Тест успешно создан"
+      new:
+        header: "Новый тест"
+        back: "Назад"
+      edit: 
+        header: "Ректирование"
+        back: "Назад"
+      test:
+        edit: "Редактировать"
+        delete: "Удалить"
+        confirm: "Хочешь удалить?"
 
   tests_mailer:
     completed_test:
-      subject: "Вы успешно завершили тест на TestGuru!"
+      subject: "Ты успешно завершил тест на TestGuru!"
