@@ -14,7 +14,7 @@ h1 = test_header(@test)
 
   p
     = f.label :category_id
-    = f.collection_select :category_id, Category.all, :id, :title, promt: true
+    = f.collection_select :category_id, Category.all, :id, :title, prompt: true
   br
 
   = f.submit

@@ -4,6 +4,8 @@ ru:
       test:
         create: "Создать тест"
         update: "Обновить тест"
+    select:
+      prompt: "Выбери категорию"
 
     label:
       test:
@@ -80,6 +82,7 @@ ru:
         success: "Тест успешно создан"
       new:
         header: "Новый тест"
+        prompt: "Выбери категорию"
         back: "Назад"
       edit: 
         header: "Ректирование"
