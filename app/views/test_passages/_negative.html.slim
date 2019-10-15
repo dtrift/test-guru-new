@@ -1,3 +1,4 @@
 b
-  h2.negative_passage Result: #{@test_passage.score}%
-h1 NEGATIVE
+  h3.negative_passage
+    = t('.result', score: @test_passage.score)
+h1 = t('.negative')
