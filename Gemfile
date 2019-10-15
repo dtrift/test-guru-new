@@ -70,3 +70,4 @@ gem 'devise', '~> 4.0'
 
 # Localization
 gem 'rails-i18n', '~> 5.1'
+gem 'devise-i18n'
