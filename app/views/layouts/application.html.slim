@@ -1,6 +1,9 @@
 doctype html
 html
   head
+    meta charset='utf-8'
+    meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'
+
     title Test Guru New
     = csrf_meta_tags
     = csp_meta_tag
@@ -10,9 +13,11 @@ html
 
   body
     = render 'shared/navigation'
-    = render 'shared/flash'
-    
-    = yield
 
-    br
+    .container
+      = render 'shared/flash'
+    
+      = yield
+
+  .row.justify-content-center.mt-5
     = render 'shared/footer'
