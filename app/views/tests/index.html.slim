@@ -1,12 +1,15 @@
-h1 = t('.header')
+h1.col-lg-12 = t('.header')
+  
+.container
+  .row
+    .col-lg-12
+      table.table.table-striped
+        tr
+          th = t('.id')
+          th = t('.title')
+          th = t('.level')
+          th = t('.questions_count')
+          th = t('.author')
+          th = t('.action')
 
-table
-  tr
-    th = t('.id')
-    th = t('.title')
-    th = t('.level')
-    th = t('.questions_count')
-    th = t('.author')
-    th = t('.action')
-
-  = render @tests
+          = render @tests
