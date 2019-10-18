@@ -1,13 +1,13 @@
-div.nav.nav-admin
-  span.nav-admin.title
+.navbar.navbar-light.bg-light
+  .navbar-brand
     = link_to 'Test Guru App', admin_tests_path
     '  | 
     = t('.admin_panel')
 
-  div.nav-admin.user
-    b = t('.welcome', user: current_user.first_name) 
+  .navbar-text
+    = t('.welcome', user: current_user.first_name) 
     '  |
-    b = current_user.email
+    = current_user.email
     '  |
-    b = link_to t('.logout'), destroy_user_session_path, method: :delete
+    = link_to t('.logout'), destroy_user_session_path, method: :delete
 br

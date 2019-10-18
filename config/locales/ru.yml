@@ -22,7 +22,9 @@ ru:
         other: "Обнаружено %{count} ошибки" 
     navigation:
       welcome: "Добро пожаловать, %{user} Гуру"
-      logout: "Выход"    
+      logout: "Выход"
+      log_in: Войти
+      sign_up: Регистрация
 
   tests:
     index:
