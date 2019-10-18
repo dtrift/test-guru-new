@@ -53,6 +53,9 @@ ru:
     negative:
       result: "Результат: %{score}%"
       negative: "Результат отрицательный"
+    gist:
+      success: Gist успешно создан
+      failure: Во время сохранения Gist возникла ошибка
 
   admin:
     navigation:
