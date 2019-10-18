@@ -1,8 +1,8 @@
 module ApplicationHelper
   FLASH_TYPES = {
-    notice: :primary,
-    alert: :secondary,
-    error: :danger
+    notice: 'primary',
+    alert: 'danger',
+    error: 'secondary'
   }
 
   def current_date
