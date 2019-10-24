@@ -1,8 +1,8 @@
 class GistQuestionService
-  def initialize(question, client: client_octokit)
+  def initialize(question, client: nil)
     @question = question
     @test = @question.test
-    @client = client
+    @client = client || client_octokit
   end
 
   def call
@@ -31,18 +31,5 @@ class GistQuestionService
 
   def client_octokit
     Octokit::Client.new(access_token: ENV['ACCESS_TOKEN'])
-  end
-
-
-  def gist_url
-    @url = @client.last_response.data[:html_url]
-  end
-
-  # def success?
-  #   @client.last_response.data[:html_url].present?
-  # end
-
-  def gist_url?
-    gist_url.present?
   end
 end

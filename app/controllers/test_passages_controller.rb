@@ -17,14 +17,15 @@ class TestPassagesController < ApplicationController
   end
 
   def gist
-    result = GistQuestionService.new(@test_passage.current_question).call
+    result = GistQuestionService.new(@test_passage.current_question)
 
-    flash.notice = result.url
+    gist = result.call
 
-    if result.gist_url?
-      flash.notice = t('.success')
+    if gist[:html_url].present?
+      # flash[:notice] = "#{view_context.link_to gist[:html_url]}"
+      flash[:notice] = "<a href=#{gist[:html_url]}></a>".html_safe
     else
-      flash.alert = t('.failure')
+      flash[:alert] = t('.failure')
     end
 
     redirect_to @test_passage
