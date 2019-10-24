@@ -9,18 +9,6 @@ class GistQuestionService
     @client.create_gist(gist_params)
   end
 
-  def gist_url
-    @client.last_response.data[:html_url]
-  end
-
-  def success?
-    @client.last_response.data[:html_url].present?
-  end
-
-  # def success?
-  #   gist_url.present?
-  # end
-
   private
 
   def gist_params
@@ -43,5 +31,18 @@ class GistQuestionService
 
   def client_octokit
     Octokit::Client.new(access_token: ENV['ACCESS_TOKEN'])
+  end
+
+
+  def gist_url
+    @url = @client.last_response.data[:html_url]
+  end
+
+  # def success?
+  #   @client.last_response.data[:html_url].present?
+  # end
+
+  def gist_url?
+    gist_url.present?
   end
 end
