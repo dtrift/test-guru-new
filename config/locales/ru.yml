@@ -44,6 +44,7 @@ ru:
       next: "Следующий вопрос"
       current_question_index: "Текущий вопрос: %{index}"
       questions_count: "Количество вопросов: %{count}"
+      gist_question: Сохранить Gist
     result:
       header: "Тест %{title} завершён"
       go_to_tests: "Список тестов"
@@ -99,3 +100,5 @@ ru:
   tests_mailer:
     completed_test:
       subject: "Ты успешно завершил тест на TestGuru!"
+  gist:
+    description: Вопрос из теста %{title}
