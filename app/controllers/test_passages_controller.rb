@@ -22,8 +22,8 @@ class TestPassagesController < ApplicationController
     gist = result.call
 
     if gist[:html_url].present?
-      # flash[:notice] = "#{view_context.link_to gist[:html_url]}"
-      flash[:notice] = "<a href=#{gist[:html_url]}></a>".html_safe
+      flash[:notice] = ActionController::Base.helpers
+        .link_to(t('.success'), gist[:html_url], target: :blank)
     else
       flash[:alert] = t('.failure')
     end
