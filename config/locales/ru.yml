@@ -59,6 +59,13 @@ ru:
       failure: Во время сохранения Gist возникла ошибка
 
   admin:
+    gists:
+      description: Вопрос из теста %{title}
+      index:
+        header: Созданные Gists
+        question: Вопрос
+        gist_url: Ссылка Гист
+        user_email: Пользователь
     navigation:
       admin_panel: "Панель администратора"
       welcome: "Добро пожаловать, %{user} Гуру"
@@ -100,5 +107,3 @@ ru:
   tests_mailer:
     completed_test:
       subject: "Ты успешно завершил тест на TestGuru!"
-  gist:
-    description: Вопрос из теста %{title}

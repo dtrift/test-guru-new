@@ -22,6 +22,8 @@ class TestPassagesController < ApplicationController
     gist = result.call
 
     if gist[:html_url].present?
+      Gist.create(user: @test_passage.user, question: @test_passage.current_question, html_url: gist[:html_url])
+
       flash[:notice] = ActionController::Base.helpers
         .link_to(t('.success'), gist[:html_url], target: :blank)
     else
