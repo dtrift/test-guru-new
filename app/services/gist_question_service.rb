@@ -1,12 +1,16 @@
 class GistQuestionService
-  def initialize(question, client: nil)
+  def initialize(question, client: client_octokit)
     @question = question
     @test = @question.test
-    @client = client || client_octokit
+    @client = client
   end
 
   def call
     @client.create_gist(gist_params)
+  end
+
+  def success?
+    @client.last_response.data[:html_url].present?
   end
 
   private

@@ -1,4 +1,4 @@
 tr
-  td = link_to gist.question.body, admin_question_path(gist.question)
-  td = link_to gist.html_url, gist.html_url, target: :blank
+  td = link_to gist.question.body.truncate(25), admin_question_path(gist.question)
+  td = link_to gist.hash_link, gist.html_url, target: :blank
   td = gist.user.email

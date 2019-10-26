@@ -1,9 +1,11 @@
-h1 = t('.header')
+.container
+  h1 = t('.header')
+  .row
+    .col-lg-12
+      table.table.table-striped
+        tr
+          th = t('.question')
+          th = t('.gist_url')
+          th = t('.user_email')
 
-table
-  tr
-    th = t('.question')
-    th = t('.gist_url')
-    th = t('.user_email')
-
-  = render @gists
+        = render @gists
