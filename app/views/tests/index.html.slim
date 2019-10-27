@@ -4,8 +4,10 @@
     .col-lg-12
       table.table.table-striped
         tr
-          th = t('.id')
-          th = t('.title')
+          th.sort-by-title.pointer
+             = t('.title')
+             = octicon 'arrow-up', class: 'text-success hide'
+             = octicon 'arrow-down', class: 'text-success hide'
           th = t('.level')
           th = t('.questions_count')
           th = t('.author')
