@@ -44,6 +44,7 @@ ru:
       next: "Следующий вопрос"
       current_question_index: "Текущий вопрос: %{index}"
       questions_count: "Количество вопросов: %{count}"
+      gist_question: Сохранить Gist
     result:
       header: "Тест %{title} завершён"
       go_to_tests: "Список тестов"
@@ -53,8 +54,18 @@ ru:
     negative:
       result: "Результат: %{score}%"
       negative: "Результат отрицательный"
+    gist:
+      success: Gist успешно создан
+      failure: Во время сохранения Gist возникла ошибка
 
   admin:
+    gists:
+      description: Вопрос из теста %{title}
+      index:
+        header: Созданные Gists
+        question: Вопрос
+        gist_url: Ссылка Гист
+        user_email: Пользователь
     navigation:
       admin_panel: "Панель администратора"
       welcome: "Добро пожаловать, %{user} Гуру"

@@ -3,6 +3,8 @@
     = link_to 'Test Guru App', admin_tests_path
     '  | 
     = t('.admin_panel')
+    '  |
+    = link_to t('.gists'), admin_gists_path
 
   .navbar-text
     = t('.welcome', user: current_user.first_name) 

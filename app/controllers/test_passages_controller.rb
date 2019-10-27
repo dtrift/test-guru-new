@@ -1,5 +1,5 @@
 class TestPassagesController < ApplicationController
-  before_action :find_test_passage, only: %i[show update result]
+  before_action :find_test_passage, only: %i[show update result gist]
 
   def show; end
 
@@ -16,8 +16,23 @@ class TestPassagesController < ApplicationController
     end
   end
 
-  private
+  def gist
+    service = GistQuestionService.new(@test_passage.current_question)
+    gist = service.call
 
+    if service.success?
+      Gist.create(user: @test_passage.user, question: @test_passage.current_question, html_url: gist[:html_url])
+
+      flash[:notice] = view_context.link_to(t('.success'), gist[:html_url], target: :blank)
+    else
+      flash[:alert] = t('.failure')
+    end
+
+    redirect_to @test_passage
+  end
+
+  private
+  
   def find_test_passage
    @test_passage = TestPassage.find(params[:id])
   end

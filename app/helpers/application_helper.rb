@@ -3,7 +3,7 @@ module ApplicationHelper
     notice: 'primary',
     alert: 'danger',
     error: 'secondary'
-  }
+  }.freeze
 
   def current_date
     Date.current

@@ -75,3 +75,8 @@ gem 'devise-i18n'
 # UI
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
+
+# NET
+gem 'faraday'
+gem 'octokit', '~> 4.0'
+gem 'dotenv-rails', groups: [:development, :test]
