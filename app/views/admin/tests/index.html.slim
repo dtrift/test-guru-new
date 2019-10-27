@@ -1,8 +1,9 @@
 h1 = t('.header')
 
 p
+  = octicon 'diff-added'
+  '
   = link_to t('.new_test'), new_admin_test_path
-
 table.table
   tr
     th.sort-by-title.pointer
