@@ -1,12 +1,15 @@
 h1 = t('.header')
 
 p
+  = octicon 'diff-added'
+  '
   = link_to t('.new_test'), new_admin_test_path
-
-table
+table.table
   tr
-    th = t('.id')
-    th = t('.title')
+    th.sort-by-title.pointer
+       = t('.title')
+       = octicon 'arrow-up', class: 'text-success hide'
+       = octicon 'arrow-down', class: 'text-success hide' 
     th = t('.level')
     th = t('.questions_count')
     th = t('.author')

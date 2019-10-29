@@ -12,7 +12,10 @@
             = b.check_box id: "answer_ids_#{b.object.id}"
             = b.label
 
-        p = link_to t('.gist_question'), gist_test_passage_path(@test_passage), method: :post
+        p
+          = octicon 'cloud-upload'
+          '
+          = link_to t('.gist_question'), gist_test_passage_path(@test_passage), method: :post
         
         p = f.submit t('.next'), class: 'btn btn-success'
 

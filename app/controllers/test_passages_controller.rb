@@ -23,7 +23,7 @@ class TestPassagesController < ApplicationController
     if service.success?
       Gist.create(user: @test_passage.user, question: @test_passage.current_question, html_url: gist[:html_url])
 
-      flash[:notice] = view_context.link_to(t('.success'), gist[:html_url], target: :blank)
+      flash[:notice] = view_context.link_to t('.success'), gist[:html_url], target: :blank
     else
       flash[:alert] = t('.failure')
     end
@@ -32,7 +32,7 @@ class TestPassagesController < ApplicationController
   end
 
   private
-  
+
   def find_test_passage
    @test_passage = TestPassage.find(params[:id])
   end
