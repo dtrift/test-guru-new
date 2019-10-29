@@ -10,9 +10,14 @@ function passwordValue() {
   if (password.value == password_confirmation.value) {
     showIcon(document.querySelectorAll('.octicon-thumbsup'))
     hideIcon(document.querySelectorAll('.octicon-thumbsdown'))
-  } else {
+  } 
+  if (password.value != password_confirmation.value) {
     hideIcon(document.querySelectorAll('.octicon-thumbsup'))
     showIcon(document.querySelectorAll('.octicon-thumbsdown'))
+  }
+  if (password_confirmation.value == '') {
+    hideIcon(document.querySelectorAll('.octicon-thumbsup'))
+    hideIcon(document.querySelectorAll('.octicon-thumbsdown'))
   }
 }
 
