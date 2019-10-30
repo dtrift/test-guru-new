@@ -71,6 +71,8 @@ ru:
       welcome: "Добро пожаловать, %{user} Гуру"
       logout: "Выход"
     tests:
+      form_inline:
+        submit: OK
       show:
         test_title: "Название теста"
         test_level: "Уровень"
@@ -100,6 +102,7 @@ ru:
         header: "Ректирование"
         back: "Назад"
       test:
+        show: Смотреть
         edit: "Редактировать"
         delete: "Удалить"
         confirm: "Хочешь удалить?"
