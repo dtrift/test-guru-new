@@ -36,13 +36,15 @@ function formInLineHandler(testId) {
   $testTitle.toggle()
 
   // if (formInline.classList.contains('hide')) {
+  if(link) {
     if ($formInline.is(':visible')) {
-    // testTitle.classList.add('hide')
-    // formInline.classList.remove('hide')
-    link.textContent = 'Отмена'
-  } else {
-    // testTitle.classList.remove('hide')
-    // formInline.classList.add('hide')
-    link.textContent = 'Редактировать'
+      // testTitle.classList.add('hide')
+      // formInline.classList.remove('hide')
+      link.textContent = 'Отмена'
+    } else {
+      // testTitle.classList.remove('hide')
+      // formInline.classList.add('hide')
+      link.textContent = 'Редактировать'
+    }
   }
 }
