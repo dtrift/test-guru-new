@@ -40,6 +40,7 @@ ru:
 
   test_passages:
     show:
+      progress: Текущий прогресс
       header: "Прохождение теста %{test}"
       next: "Следующий вопрос"
       current_question_index: "Текущий вопрос: %{index}"
