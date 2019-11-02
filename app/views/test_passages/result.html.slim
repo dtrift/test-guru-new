@@ -4,4 +4,15 @@ h1 = t('.header', title: @test_passage.test.title)
 - else
   = render 'negative'
 
+p
+  - qs = @test_passage.test.questions.size
+
+  b = t('test_passages.show.progress')
+  .progress.col-sm-4
+    = content_tag :div, nil, class: 'progress-bar',
+                             role: 'progressbar',
+                             data: { current_value: qs,
+                                     max_value: qs }
+      = '100%'
+
 = link_to t('.go_to_tests'), tests_path

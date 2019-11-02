@@ -19,6 +19,16 @@
         
         p = f.submit t('.next'), class: 'btn btn-success'
 
+        p
+          b = t('.progress')
+          .progress.col-sm-4
+            = content_tag :div, nil, class: 'progress-bar',
+                                     role: 'progressbar',
+                                     data: { current_value: @test_passage.index_current_question - 1,
+                                             max_value: @test_passage.test.questions.size }
+              = @test_passage.progress
+              ' %
+
       br
       b = t('.current_question_index', index: @test_passage.index_current_question)
       '  |

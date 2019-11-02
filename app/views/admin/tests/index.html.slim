@@ -4,6 +4,9 @@ p
   = octicon 'diff-added'
   '
   = link_to t('.new_test'), new_admin_test_path
+
+= render 'shared/errors', resource: @test
+
 table.table
   tr
     th.sort-by-title.pointer
@@ -13,6 +16,6 @@ table.table
     th = t('.level')
     th = t('.questions_count')
     th = t('.author')
-    th colspan=2 = t('.actions')
+    th colspan=3 = t('.actions')
 
   = render @tests

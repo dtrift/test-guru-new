@@ -24,6 +24,10 @@ class TestPassage < ApplicationRecord
     (100 / test.questions.count).to_f * correct_questions
   end
 
+  def progress
+    ((index_current_question - 1).to_f / test.questions.count * 100).round(2)
+  end
+
   def score_positive?
     score >= POSITIVE_SCORE
   end
