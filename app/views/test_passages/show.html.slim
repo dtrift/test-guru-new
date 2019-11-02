@@ -26,6 +26,8 @@
                                      role: 'progressbar',
                                      data: { current_value: @test_passage.index_current_question - 1,
                                              max_value: @test_passage.test.questions.size }
+              = @test_passage.progress
+              ' %
 
       br
       b = t('.current_question_index', index: @test_passage.index_current_question)
