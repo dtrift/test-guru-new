@@ -1,6 +1,6 @@
-users = User.create!([
-  {first_name: 'Tim', last_name: 'G', email: 'tn.timur.g@gmail.com', password: 'PaS$w0Rd', type: 'Admin'}
-  ])
+# users = User.create!([
+#   {first_name: 'Tim', last_name: 'G', email: 'tn.timur.g@gmail.com', password: 'PaS$w0Rd', type: 'Admin'}
+#   ])
 categories = Category.create!([
   {title: 'Frontend'}, 
   {title: 'Backend'}
