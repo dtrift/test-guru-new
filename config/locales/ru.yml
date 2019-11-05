@@ -21,6 +21,7 @@ ru:
         one: "Обнаружена %{count} ошибка"
         other: "Обнаружено %{count} ошибки" 
     navigation:
+      feedback: Обратная связь
       welcome: "Добро пожаловать, %{user} Гуру"
       logout: "Выход"
       log_in: Войти
