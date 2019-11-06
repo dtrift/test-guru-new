@@ -12,10 +12,10 @@ h1 = t('.feedback')
     = current_user.email
 
   p
-    b = f.label :body 
+    b = f.label t('.body') 
   p   
     = f.text_area :body, id: :feedback_body, rows: 6, cols: 35
 
   br
 
-  = f.submit
+  = f.submit t('.submit')

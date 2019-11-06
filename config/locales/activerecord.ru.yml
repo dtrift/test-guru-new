@@ -7,7 +7,11 @@ ru:
       test:
         title: "Название"
         level: "Уровень"
+      feedback:
+        body: Сообщение
 
     errors:
       messages:
         blank: "не может быть пустым"
+
+

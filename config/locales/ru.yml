@@ -13,6 +13,16 @@ ru:
         level: "Уровень"
         category_id: "Категория"
 
+  feedbacks:
+    new:
+      back: Назад
+    form:
+      feedback: Обратная связь
+      user: Пользователь
+      email: Email
+      body: Сообщение
+      submit: Отправить сообщение
+
   shared:
     errors:
       header:
