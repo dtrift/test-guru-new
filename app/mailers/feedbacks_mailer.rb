@@ -4,8 +4,6 @@ class FeedbacksMailer < ApplicationMailer
     @user_email = feedback.user.email
     @message = feedback.body
 
-    # mail to: 'tn.timur.g@gmail.com'
-    # mail to: Admin.pluck(:email)
-    mail to: @user_email
+    mail to: Admin.pluck(:email)
   end
 end
