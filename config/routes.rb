@@ -15,7 +15,10 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :feedbacks, only: %i[new create]
+
   namespace :admin do
+    resources :feedbacks, shallow: true, only: %i[index show]
     resources :gists, shallow: true, only: %i[index]
     resources :tests do
       patch :update_inline, on: :member

@@ -1,0 +1,13 @@
+.container
+  h1 = t('.feedback')
+  .row
+    .col-lg-12
+      table.table.table-striped
+        tr
+          th = t('.created_at')
+          th = t('.user_name')
+          th = t('.user_email')
+          th = t('.body')
+
+
+        = render @feedbacks

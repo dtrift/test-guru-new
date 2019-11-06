@@ -1,0 +1,21 @@
+h1 = t('.feedback')
+= form_with model: [@feedback], local: true do |f|
+  = render 'shared/errors', resource: @feedback
+
+  p 
+    = t('.user')
+    |  - 
+    = current_user.first_name
+  p
+    = t('.email')
+    |  - 
+    = current_user.email
+
+  p
+    b = f.label :body 
+  p   
+    = f.text_area :body, id: :feedback_body, rows: 6, cols: 35
+
+  br
+
+  = f.submit
