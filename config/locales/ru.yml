@@ -18,8 +18,8 @@ ru:
       back: Назад
     form:
       feedback: Обратная связь
-      user: Пользователь
-      email: Email
+      user:  Твое имя
+      email: Твой Email
       body: Сообщение
       submit: Отправить сообщение
 
@@ -71,18 +71,6 @@ ru:
       failure: Во время сохранения Gist возникла ошибка
 
   admin:
-    feedbacks:
-      show:
-        user_name: Пользователь
-        user_email: Email пользователя
-        message: Сообщение
-        back: Назад 
-      index:
-        feedback: Обратная связь 
-        created_at: Дата создания
-        user_name: Имя пользователя
-        user_email: EMAIL
-        body: Сообщение
     gists:
       description: Вопрос из теста %{title}
       index:

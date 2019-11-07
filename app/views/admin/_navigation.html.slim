@@ -5,8 +5,7 @@
     = t('.admin_panel')
     '  |
     = link_to t('.gists'), admin_gists_path
-    '  |
-    = link_to t('shared.navigation.feedback'), admin_feedbacks_path
+
   .navbar-text
     = t('.welcome', user: current_user.first_name) 
     '  |
