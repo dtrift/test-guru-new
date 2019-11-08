@@ -1,6 +1,6 @@
 class FeedbacksMailer < ApplicationMailer
   default to: -> { Admin.pluck(:email) },
-        from: 'notification@test-guru-tim.herokuapp.com'
+          from: @user_email
         
   def send_feedback(feedback)
     @user_name = feedback.user_name
