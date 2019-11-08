@@ -10,7 +10,7 @@ class FeedbacksController < ApplicationController
 
     if @feedback.valid?
       FeedbacksMailer.send_feedback(@feedback).deliver_now
-      redirect_to root_path
+      redirect_to root_path, notice: t('.send_mail_success')
     else
       render :new
     end

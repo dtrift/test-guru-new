@@ -16,6 +16,8 @@ ru:
   feedbacks:
     new:
       back: Назад
+    create:
+      send_mail_success: Письмо успешно отправлено
     form:
       feedback: Обратная связь
       user:  Твое имя
