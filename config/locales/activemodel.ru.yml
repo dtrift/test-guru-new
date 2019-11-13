@@ -1,0 +1,7 @@
+ru:
+  activemodel:
+    model:
+      feedback:
+        user_name: Имя
+        user_email: EMAIL
+        body: Сообщение

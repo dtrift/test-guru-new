@@ -1,0 +1,17 @@
+h1 = @badge.name
+= form_with model: [:admin, @badge], local: true do |f|
+  = render 'shared/errors', resource: @badge
+
+  p
+    = f.label :name
+  p
+    = f.text_field :name, id: :badge_name
+  br
+
+  p
+    = f.label :picture_path
+  p
+    = f.text_field :picture_path, id: :badge_picture_path
+  br
+
+  = f.submit

@@ -1,0 +1,12 @@
+h1 = t('.badges')
+
+p
+  = link_to t('.new_badge'), new_admin_badge_path
+
+table.table
+  tr
+    th = t('.name')
+    th = t('.picture_path')
+    th colspan=3 = t('.actions')
+
+  = render @badges 

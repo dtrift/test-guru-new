@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resource :feedback, only: %i[new create]
 
   namespace :admin do
+    resources :badges, shallow: true
     resources :gists, shallow: true, only: %i[index]
     resources :tests do
       patch :update_inline, on: :member

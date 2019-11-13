@@ -1,4 +1,4 @@
-ru:
+ru: 
   helpers:
     submit:
       test:
@@ -23,7 +23,7 @@ ru:
       user:  Твое имя
       email: Твой Email
       body: Сообщение
-      submit: Отправить сообщение
+      submit: Отправить письмо
 
   shared:
     errors:
