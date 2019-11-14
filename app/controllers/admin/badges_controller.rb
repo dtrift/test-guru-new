@@ -1,5 +1,5 @@
 class Admin::BadgesController < Admin::BaseController
-  before_action :find_badge, only: %i[show edit update destroy]
+  before_action :find_badge, only: %i[edit update destroy]
 
   def index
     @badges = Badge.all
@@ -18,8 +18,6 @@ class Admin::BadgesController < Admin::BaseController
       render :new
     end
   end
-
-  def show; end
 
   def edit; end
 
