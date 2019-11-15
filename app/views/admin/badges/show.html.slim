@@ -1,0 +1,18 @@
+p
+  strong = t('.badge_name')
+p
+  = @badge.name
+
+p
+  strong = t('.badge_picture')
+p
+  = image_tag @badge.picture_path
+
+p
+  strong = t('.picture_path')
+p
+  = @badge.picture_path
+
+= link_to t('.edit'), edit_admin_badge_path(@badge) 
+'  |  
+= link_to t('.back'), admin_badges_path 
