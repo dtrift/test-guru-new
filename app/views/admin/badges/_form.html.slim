@@ -14,4 +14,10 @@ h1 = @badge.name
     = f.select :picture_path, pictures, promt: true
   br
 
+  p
+    = f.label :rule
+  p
+    = f.select :rule, rules, promt: true
+  br
+
   = f.submit

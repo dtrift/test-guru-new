@@ -13,6 +13,11 @@ p
 p
   = @badge.picture_path
 
+p 
+  strong = t('.rule')
+p
+  = @badge.rule
+
 = link_to t('.edit'), edit_admin_badge_path(@badge) 
 '  |  
 = link_to t('.back'), admin_badges_path 
