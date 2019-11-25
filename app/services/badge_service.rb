@@ -8,15 +8,14 @@ class BadgeService
   private
 
   def badge_category_backend_received?
-    Test.where(category: 'backend').count == @user.tests.desc_category('backend').uniq.count 
+    Test.where(category: 'backend').count == @user.tests.category('backend').uniq.count 
   end
 
   def badge_first_try_received?
-    
+    TestPassage.where(user: @user, test: @test).count == 1
   end
 
   def level_reward_received?(level_test)
     
   end
-
 end

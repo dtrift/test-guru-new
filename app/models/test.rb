@@ -12,10 +12,10 @@ class Test < ApplicationRecord
   scope :easy, -> { where(level: 0..1) }
   scope :medium, -> { where(level: 2..4) }
   scope :hard, -> { where(level: 5..Float::INFINITY) }
-  scope :desc_category, ->(c_title) { joins(:category)
+  scope :category, ->(c_title) { joins(:category)
     .where(categories: {title: c_title}) }
 
   def desc_category_title
-    desc_category.order(title: :desc).pluck(:title)
+    category.order(title: :desc).pluck(:title)
   end
 end
