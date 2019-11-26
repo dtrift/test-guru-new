@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   end
 
   resource :feedback, only: %i[new create]
+  resources :badges, only: %i[index]
 
   namespace :admin do
     resources :badges, shallow: true
