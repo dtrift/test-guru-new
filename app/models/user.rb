@@ -16,8 +16,12 @@ class User < ApplicationRecord
          :confirmable,
          :trackable
 
-  def all_tests(level_test)
+  def all_tests_by_level(level_test)
     tests.where(level: level_test)
+  end
+
+  def all_tests_by_category(category)
+    tests.where(category: category)
   end
 
   def test_passage(test)
