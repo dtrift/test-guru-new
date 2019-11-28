@@ -27,7 +27,7 @@ class BadgeService
   private
 
   def badge_category_backend_received?
-    Test.where(category: 'backend').count == @user.tests.category('backend').uniq.count 
+    Test.where(category: @test.category).count == @user.tests.where(category: @test.category).uniq.count 
   end
 
   def badge_first_try_received?

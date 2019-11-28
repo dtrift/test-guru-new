@@ -18,6 +18,13 @@ p
 p
   = @badge.rule
 
+p 
+  strong = t('.rule_value')
+p
+  = @badge.rule_value
+
+
+
 = link_to t('.edit'), edit_admin_badge_path(@badge) 
 '  |  
 = link_to t('.back'), admin_badges_path 

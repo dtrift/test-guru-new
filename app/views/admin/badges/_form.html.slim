@@ -20,4 +20,10 @@ h1 = @badge.name
     = f.select :rule, rules, promt: true
   br
 
+  p
+    = f.label :rule_value
+  p
+    = f.text_field :rule_value, id: :badge_rule_value
+  br  
+
   = f.submit
