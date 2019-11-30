@@ -1,36 +1,38 @@
 class BadgeService
-  attr_reader :badges
-
   def initialize(test_passage)
     @user = test_passage.user
     @test = test_passage.test
     @test_passage = test_passage
-    @badges = []
   end
 
   def call
-
+    Badge.all.select { |badge| send "#{badge.rule}?", badge.rule_value }
   end
 
   private
 
-  def badge_category_received?
-    Test.where(category: @test.category).count == @user.tests.category(@test.category).uniq.count 
+  def category_tests_complete?(category)
+    test_complete? &&
+    badge_received?(rule_value: category) &&
+    Test.category(category).count == @user.tests.category(category).uniq.count 
   end
 
-  def badge_first_try_received?
+  def first_try_complete?(first_try)
+    test_complete? &&
     TestPassage.where(user: @user, test: @test).count == 1
   end
 
-  def level_reward_received?(level_test)
-    Test.where(level: level_test).count == @user.tests.level(level_test).uniq.count
+  def level_tests_complete?(level_test)
+    test_complete? &&
+    badge_received?(rule_value: level_test) &&    
+    Test.level(level_test).count == @user.tests.level(level_test).uniq.count
   end
 
-  def get_badge(badge)
-    @badges << badge
+  def badge_received?(value)
+    @user.badges.find_by(value).present? ? false : true
   end
 
-  def badge_recived?(value)
-    @user.badges.find_by(value).present?
+  def test_complete?
+    @test_passage.score_positive?
   end
 end

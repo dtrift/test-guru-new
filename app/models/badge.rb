@@ -1,8 +1,8 @@
 class Badge < ApplicationRecord
   RULES = [
-    [I18n.t('.complete_level_tests'), :complete_level_tests],
-    [I18n.t('.complete_firts_try'), :complete_firts_try],
-    [I18n.t('.complete_category_tests'), :complete_category_tests]
+    [I18n.t('.complete_level_tests'), :level_tests_complete],
+    [I18n.t('.complete_first_try'), :first_try_complete],
+    [I18n.t('.complete_category_tests'), :category_tests_complete]
   ].freeze
 
   has_many :user_badges, dependent: :nullify
