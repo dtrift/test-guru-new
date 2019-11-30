@@ -15,7 +15,7 @@ class BadgeService
   private
 
   def badge_category_received?
-    Test.where(category: @test.category).count == @user.all_tests_by_category(@test.category).uniq.count 
+    Test.where(category: @test.category).count == @user.tests.category(@test.category).uniq.count 
   end
 
   def badge_first_try_received?
@@ -23,10 +23,14 @@ class BadgeService
   end
 
   def level_reward_received?(level_test)
-    Test.where(level: level_test).count == @user.all_tests_by_level(level_test).uniq.count
+    Test.where(level: level_test).count == @user.tests.level(level_test).uniq.count
   end
 
-  def reward(badge)
+  def get_badge(badge)
     @badges << badge
+  end
+
+  def badge_recived?(value)
+    @user.badges.find_by(value).present?
   end
 end
