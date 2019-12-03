@@ -7,8 +7,11 @@ class TestPassage < ApplicationRecord
 
   before_validation :set_current_question
 
+  scope :successful, -> { where(successful: true) }
+
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
+    successful!
     save!
   end
 
@@ -52,5 +55,9 @@ class TestPassage < ApplicationRecord
 
   def correct_answers
     current_question.answers.correct
+  end
+  
+  def successful!
+    self.successful = score_positive?
   end
 end

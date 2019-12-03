@@ -12,9 +12,12 @@ class BadgeService
   private
 
   def category_tests_complete?(category)
+    category_id = Category.where(title: category)
     test_complete? &&
+    @test.category[:title] == category &&
     badge_received?(rule_value: category) &&
-    Test.category(category).count == @user.tests.category(category).uniq.count 
+    
+    # Test.category(category).count == @user.tests.category(category).uniq.count
   end
 
   def first_try_complete?(first_try)
@@ -29,7 +32,7 @@ class BadgeService
   end
 
   def badge_received?(value)
-    @user.badges.find_by(value).present? ? false : true
+    @user.badges.find_by(value).nil?
   end
 
   def test_complete?

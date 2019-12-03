@@ -13,7 +13,7 @@ class Test < ApplicationRecord
   scope :medium, -> { where(level: 2..4) }
   scope :hard, -> { where(level: 5..Float::INFINITY) }
   scope :level, ->(level) { where(level: level) }
-  scope :category, ->(c_title) { joins(:category)
+  scope :by_category, ->(c_title) { joins(:category)
     .where(categories: {title: c_title}) }
 
   def desc_category_title
