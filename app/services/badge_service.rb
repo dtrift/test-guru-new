@@ -16,15 +16,13 @@ class BadgeService
     test_successful_complete? &&
     badge_received?(rule_value: category) &&
     category_id = Category.where(title: category)
-    Test.category(category).count == user_successful_test_passages
-                                       .where(tests: { category_id: category_id }).uniq.count
+    Test.category(category).count == user_successful_test_passages(category_id: category_id).uniq.count
   end
 
   def level_tests_complete?(level_test)
     test_successful_complete? &&
     badge_received?(rule_value: level_test) &&
-    Test.level(level_test).count == user_successful_test_passages
-                                      .where(tests: { level: level_test }).uniq.count
+    Test.level(level_test).count == user_successful_test_passages(level: level_test).uniq.count
   end
 
   def first_try_complete?(first_try)
@@ -40,7 +38,7 @@ class BadgeService
     @test_passage.score_positive?
   end
 
-  def user_successful_test_passages
-    @user.test_passages.successful.joins(:test)
+  def user_successful_test_passages(value)
+    @user.test_passages.successful.joins(:test).where(tests: value)
   end
 end

@@ -1,8 +1,8 @@
 class Badge < ApplicationRecord
-  RULES = [
-    :level_tests_complete?,
-    :first_try_complete?,
-    :category_tests_complete?
+  RULES = %i[
+    level_tests_complete?
+    first_try_complete?
+    category_tests_complete?
   ].freeze
 
   has_many :user_badges, dependent: :nullify
@@ -10,5 +10,5 @@ class Badge < ApplicationRecord
 
   validates_uniqueness_of :rule, scope: :rule_value
   validates :name, :picture_path, :rule, presence: true
-  # validates :rule, inclusion: { in: RULES }
+  validates :rule, inclusion: { in: RULES.map(&:to_s) }
 end
