@@ -6,36 +6,41 @@ class BadgeService
   end
 
   def call
-    Badge.all.select { |badge| send "#{badge.rule}?", badge.rule_value }
+    Badge.all.select { |badge| send "#{badge.rule}", badge.rule_value }
   end
 
   private
 
   def category_tests_complete?(category)
-    category_id = Category.where(title: category)
-    test_complete? &&
     @test.category[:title] == category &&
+    test_successful_complete? &&
     badge_received?(rule_value: category) &&
-    
-    # Test.category(category).count == @user.tests.category(category).uniq.count
-  end
-
-  def first_try_complete?(first_try)
-    test_complete? &&
-    TestPassage.where(user: @user, test: @test).count == 1
+    category_id = Category.where(title: category)
+    Test.category(category).count == user_successful_test_passages
+                                       .where(tests: { category_id: category_id }).uniq.count
   end
 
   def level_tests_complete?(level_test)
-    test_complete? &&
-    badge_received?(rule_value: level_test) &&    
-    Test.level(level_test).count == @user.tests.level(level_test).uniq.count
+    test_successful_complete? &&
+    badge_received?(rule_value: level_test) &&
+    Test.level(level_test).count == user_successful_test_passages
+                                      .where(tests: { level: level_test }).uniq.count
+  end
+
+  def first_try_complete?(first_try)
+    test_successful_complete? &&
+    TestPassage.where(user: @user, test: @test).count == 1
   end
 
   def badge_received?(value)
     @user.badges.find_by(value).nil?
   end
 
-  def test_complete?
+  def test_successful_complete?
     @test_passage.score_positive?
+  end
+
+  def user_successful_test_passages
+    @user.test_passages.successful.joins(:test)
   end
 end
