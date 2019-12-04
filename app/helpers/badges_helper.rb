@@ -13,6 +13,8 @@ module BadgesHelper
   end
 
   def rules
-    Badge::RULES
+    Badge::RULES.map do |rule|
+      [I18n.t("admin.badges.badge_service.rules.#{rule}"), rule]
+    end
   end
 end

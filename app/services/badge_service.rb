@@ -20,6 +20,7 @@ class BadgeService
   end
 
   def level_tests_complete?(level_test)
+    @test.level == level_test &&
     test_successful_complete? &&
     badge_received?(rule_value: level_test) &&
     Test.level(level_test).count == user_successful_test_passages(level: level_test).uniq.count

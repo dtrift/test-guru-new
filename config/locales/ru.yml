@@ -120,6 +120,12 @@ ru:
         edit: "Редактировать"
         delete: "Удалить"
         confirm: "Хочешь удалить?"
+    badges:
+      badge_service:
+        rules:
+          level_tests_complete?: Завершение тестов уровня
+          category_tests_complete?: Завершение тестов категории
+          first_try_complete?:  Завершение теста с первой попытки
 
   tests_mailer:
     completed_test:
