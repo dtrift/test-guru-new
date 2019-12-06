@@ -14,7 +14,7 @@ class BadgeService
   def category_tests_complete?(category)
     @test.category[:title] == category &&
     test_successful_complete? &&
-    badge_received?(rule_value: category) &&
+    # badge_received?(rule_value: category) &&
     category_id = Category.where(title: category)
     Test.category(category).count == user_successful_test_passages(category_id: category_id).uniq.count
   end
@@ -22,7 +22,7 @@ class BadgeService
   def level_tests_complete?(level_test)
     @test.level == level_test.to_i &&
     test_successful_complete? &&
-    badge_received?(rule_value: level_test) &&
+    # badge_received?(rule_value: level_test) &&
     Test.level(level_test).count == user_successful_test_passages(level: level_test).uniq.count
   end
 
@@ -31,9 +31,9 @@ class BadgeService
     TestPassage.where(user: @user, test: @test).count == 1
   end
 
-  def badge_received?(value)
-    @user.badges.find_by(value).nil?
-  end
+  # def badge_received?(value)
+  #   @user.badges.find_by(value).nil?
+  # end
 
   def test_successful_complete?
     @test_passage.score_positive?
@@ -41,5 +41,9 @@ class BadgeService
 
   def user_successful_test_passages(value)
     @user.test_passages.successful.joins(:test).where(tests: value)
+  end
+
+  def date_last_received_badge(value)
+    @user.user_badges.where(badge: value).order(created_at: :asc).last.created_at
   end
 end
