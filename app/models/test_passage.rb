@@ -8,7 +8,7 @@ class TestPassage < ApplicationRecord
   before_validation :set_current_question
 
   scope :successful, -> { where(successful: true) }
-  scope :by_created_date, ->(date) { where('created_at > ?', date) }
+  scope :after_date, ->(date) { where('created_at > ?', date) }
 
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)

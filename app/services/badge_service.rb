@@ -38,7 +38,7 @@ class BadgeService
   end
 
   def user_successful_test_passages(value, date)
-    @user.test_passages.successful.by_created_date(date)
+    @user.test_passages.successful.after_date(date)
       .joins(:test).where(tests: value)
   end
 
