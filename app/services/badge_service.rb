@@ -6,24 +6,26 @@ class BadgeService
   end
 
   def call
-    Badge.all.select { |badge| send "#{badge.rule}", badge.rule_value }
+    Badge.all.select { |badge| send badge.rule, badge }
   end
 
   private
 
-  def category_tests_complete?(category)
+  def category_tests_complete?(badge)
+    category = badge.rule_value
+    date = date_last_received_badge(badge)
+    category_id = @test.category.id
     @test.category[:title] == category &&
     test_successful_complete? &&
-    # badge_received?(rule_value: category) &&
-    category_id = Category.where(title: category)
-    Test.category(category).count == user_successful_test_passages(category_id: category_id).uniq.count
+    Test.category(category).count == user_successful_test_passages( { category_id: category_id }, date).uniq.count
   end
 
-  def level_tests_complete?(level_test)
-    @test.level == level_test.to_i &&
+  def level_tests_complete?(badge)
+    level_test = badge.rule_value
+    date = date_last_received_badge(badge)
+    @test.level == level_test &&
     test_successful_complete? &&
-    # badge_received?(rule_value: level_test) &&
-    Test.level(level_test).count == user_successful_test_passages(level: level_test).uniq.count
+    Test.level(level_test).count == user_successful_test_passages( { level: level_test }, date).uniq.count
   end
 
   def first_try_complete?(first_try)
@@ -31,19 +33,16 @@ class BadgeService
     TestPassage.where(user: @user, test: @test).count == 1
   end
 
-  # def badge_received?(value)
-  #   @user.badges.find_by(value).nil?
-  # end
-
   def test_successful_complete?
     @test_passage.score_positive?
   end
 
-  def user_successful_test_passages(value)
-    @user.test_passages.successful.joins(:test).where(tests: value)
+  def user_successful_test_passages(value, date)
+    @user.test_passages.successful.by_created_date(date)
+      .joins(:test).where(tests: value)
   end
 
-  def date_last_received_badge(value)
-    @user.user_badges.where(badge: value).order(created_at: :asc).last.created_at
+  def date_last_received_badge(badge)
+    @user.user_badges.where(badge: badge).order(created_at: :asc).last&.created_at || 0
   end
 end
