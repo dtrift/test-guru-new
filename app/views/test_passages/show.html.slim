@@ -4,10 +4,11 @@
 
       h1.mt-2 = t('.header', test: @test_passage.test.title)
 
-      h1.passage-timer.align-middle 
-        b = t('.passage_timer')
+      h1.align-middle 
+        = t('.passage_timer')
         ': 
-        = @test_passage.test.passage_timer
+        b = content_tag :span, nil, class: 'passage-timer',
+                                   data: { start_value: @test_passage.test.passage_timer }
 
       h3.mt-2 #{@test_passage.current_question.body}
 
