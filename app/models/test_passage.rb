@@ -36,6 +36,18 @@ class TestPassage < ApplicationRecord
     score >= POSITIVE_SCORE
   end
 
+  def time_out?
+    remaining_time <= 0 if time_limit?
+  end
+
+  def time_limit?
+    test.passage_timer.present?
+  end
+
+  def remaining_time
+    ((created_at + test.passage_timer.minutes) - Time.current).to_i
+  end
+
   private
 
   def set_current_question

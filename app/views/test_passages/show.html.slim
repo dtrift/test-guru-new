@@ -7,8 +7,8 @@
       h1.align-middle 
         = t('.passage_timer')
         ': 
-        b = content_tag :span, nil, class: 'passage-timer',
-                                   data: { start_value: @test_passage.test.passage_timer }
+        b = content_tag :span, '', class: 'passage-timer',
+                                   data: { start_value: @test_passage.remaining_time }
 
       h3.mt-2 #{@test_passage.current_question.body}
 
