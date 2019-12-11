@@ -10,10 +10,10 @@ function startTimer(timer) {
   var timerId = setInterval(function() {
     timeLimit--
     showTimer(timeLimit, timer)
-    if (timeLimit == 0) {
+    if (timeLimit <= 0) {
       clearInterval(timerId)
       alert('Закончилось время теста')
-      window.location.replace(window.location + '/result')
+      document.querySelector('form').submit()
     }
   }, 1000)
 }
