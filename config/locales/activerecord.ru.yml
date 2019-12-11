@@ -7,6 +7,7 @@ ru:
       test:
         title: "Название"
         level: "Уровень"
+        passage_timer: Время прохождения теста (минут)
       feedback:
         user_name: Имя
         user_email: EMAIL

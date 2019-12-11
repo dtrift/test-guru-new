@@ -59,6 +59,7 @@ ru:
       current_question_index: "Текущий вопрос: %{index}"
       questions_count: "Количество вопросов: %{count}"
       gist_question: Сохранить Gist
+      passage_timer: До завершения теста 
     result:
       header: "Тест %{title} завершён"
       go_to_tests: "Список тестов"

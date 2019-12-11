@@ -11,9 +11,14 @@ class TestPassage < ApplicationRecord
   scope :after_date, ->(date) { where('created_at > ?', date) }
 
   def accept!(answer_ids)
-    self.correct_questions += 1 if correct_answer?(answer_ids)
-    successful!
-    save!
+    if timed_out?
+      self.successful = false
+      self.current_question = nil
+    else
+      self.correct_questions += 1 if correct_answer?(answer_ids)
+      successful!
+      save!
+    end
   end
 
   def completed?
@@ -34,6 +39,18 @@ class TestPassage < ApplicationRecord
 
   def score_positive?
     score >= POSITIVE_SCORE
+  end
+
+  def timed_out?
+    remaining_time <= 0 && time_limit?
+  end
+
+  def time_limit?
+    test.passage_timer.present?
+  end
+
+  def remaining_time
+    ((created_at + test.passage_timer.minutes) - Time.current).to_i
   end
 
   private

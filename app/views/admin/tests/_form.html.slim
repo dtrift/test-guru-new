@@ -17,4 +17,9 @@ h1 = test_header(@test)
     = f.collection_select :category_id, Category.all, :id, :title, prompt: true
   br
 
+  p
+    = f.label :passage_timer
+    = f.number_field :passage_timer, id: :test_passage_timer
+  br
+
   = f.submit
